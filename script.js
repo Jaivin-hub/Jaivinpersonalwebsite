@@ -20,7 +20,7 @@ function charectercheck(){
         // return true
     }
     else{
-        document.getElementById("error-messege").innerHTML="Please enter character only"
+        document.getElementById("error-messege").innerHTML="Please enter character only without space"
         checkcharecter=false
         // return false
     }
