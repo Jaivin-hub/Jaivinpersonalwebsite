@@ -8,19 +8,20 @@ var checkphone
 function charectercheck(){
     var nam= document.getElementById("name")
     var name1=nam.value
-    var check=/^[A-Za-z]+$/
+    var check= /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/
+
     if(name1 ==""){
-        document.getElementById("error-messege").innerHTML="Please enter name"
+        document.getElementById("name-error").innerHTML="Please enter name"
         checkcharecter=false
         // return false
     }
     else if(name1.match(check)){
-        document.getElementById("error-messege").innerHTML=""
+        
         checkcharecter=true
         // return true
     }
     else{
-        document.getElementById("error-messege").innerHTML="Please enter character only without space"
+        document.getElementById("name-error").innerHTML="Please enter character only"
         checkcharecter=false
         // return false
     }
@@ -32,16 +33,16 @@ function placecheck(){
     var place=nam.value
     var check=/^[A-Za-z]+$/
     if(place ==""){
-        document.getElementById("error-messege").innerHTML="Please enter your place"
+        document.getElementById("place-error").innerHTML="Please enter your place"
         checkplace=false
         // return false
     }
     else if(place.match(check)){
-        document.getElementById("error-messege").innerHTML=""
+        document.getElementById("place-error").innerHTML=""
         checkplace=true
         // return true
     }else{
-        document.getElementById("error-messege").innerHTML="Please enter character only"
+        document.getElementById("place-error").innerHTML="Please enter character only"
         checkplace=false
         // return false
     }
@@ -52,17 +53,17 @@ function emailcheck(){
     var email=nam.value
     var check=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     if(email ==""){
-        document.getElementById("error-messege").innerHTML="Please enter your Email"
+        document.getElementById("email-error").innerHTML="Please enter your Email"
         checkemail=false
         // return false
     }
     else if(email.match(check)){
-        document.getElementById("error-messege").innerHTML=""
+        document.getElementById("email-error").innerHTML=""
         checkemail=true
         // return true
     }
     else{
-        document.getElementById("error-messege").innerHTML="Please enter valid Email"
+        document.getElementById("email-error").innerHTML="Please enter valid Email"
         checkemail=false
         // return false
     }
@@ -73,18 +74,21 @@ function phoneCheck(){
     var mobile=nam.value
     var check=/^\d{10}$/
     if(mobile ==""){
-        document.getElementById("error-messege").innerHTML="Please enter your Phone No"
+        document.getElementById("mobile-error").innerHTML="Please enter your Phone No"
         checkphone=false
         // return false
     }
     else if(mobile.match(check)){
-        document.getElementById("error-messege").innerHTML=""
+        document.getElementById("mobile-error").innerHTML=""
         checkphone=true
         // return true
 
+    }else if(mobile.length<10){
+        document.getElementById("mobile-error").innerHTML="Entered values are below 10"
+        checkphone=false
     }
     else{
-        document.getElementById("error-messege").innerHTML="Please enter Numbers only"
+        document.getElementById("mobile-error").innerHTML="Please enter 10 Numbers"
         checkphone=false
         // return false
     }

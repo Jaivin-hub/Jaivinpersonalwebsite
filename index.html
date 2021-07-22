@@ -66,10 +66,10 @@
             <h1 class="name"><span><strong>JAIVIN</strong></span></h1>
             <p class="text"><i>MERN stack Developer and programmer.</i></p>
             <div class="sociallinks">
-              <a href="https://touch.facebook.com/mj.jaivin"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/mj_jaivin/"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/jaivin-jv-56ab22212/"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://github.com/Jaivin-hub"><i class="fab fa-github"></i></a>
+              <a href="https://touch.facebook.com/mj.jaivin" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/mj_jaivin/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/jaivin-jv-56ab22212/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/Jaivin-hub" target="_blank"><i class="fab fa-github"></i></a>
             </div>
           </div>
           <div class="col-md-6 col-12 align-items-center">
@@ -304,10 +304,12 @@
 
     <div class="container-fluid">
       <h1 class="text-center pt-5"><strong>Contact me</strong></h1>
-      <p class="text-center">swing by for a cup of coffie, or leave a messege</p>
 
-      <div id="error-messege" class="w-100 h-50" style="background: #fe8b8e;transition: all 0.5s ease;"></div>
-      <div class="row ">
+      <p class="text-center">swing by for a cup of coffie, or leave a messege</p>
+      <div id="error"></div>
+
+      <!-- <div id="error-messege" class="w-100 h-50" style="background: #fe8b8e;transition: all 0.5s ease;"></div>
+      <div class="row "> -->
 
 
 
@@ -317,20 +319,24 @@
               <div class="form-group col-md-6 success ">
                 <label for="inputEmail4">Name</label>
                 <input type="text" class="form-control " name = "name" autocomplete="off"  id="name" placeholder="Name" onkeyup="charectercheck()">
+                <p id="name-error" style="color: red;"></p>
               </div>
               <div class="form-group col-md-6 error">
                 <label for="inputPassword4">Place</label>
                 <input type="text" class="form-control" name="place" autocomplete="off"  id="place" placeholder="place" onkeyup="placecheck()">
+                <p id="place-error" style="color: red;"></p>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
                 <input type="email" class="form-control" name="email" autocomplete="off"  id="email" placeholder="email" onkeyup="emailcheck()">
+                <p id="email-error" style="color: red;"></p>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Mobile</label>
                 <input type="tel" class="form-control" name="Mobile" autocomplete="off"  id="mobile" maxlength="10" minlength="10" placeholder="Mobile No" onkeyup="phoneCheck()">
+                <p id="mobile-error" style="color: red;"></p>
               </div>
             </div>
 
@@ -410,12 +416,20 @@
           },
           error:function (err){
               alert("Something Error")
+               checkcharecter() 
+               checkplace()
+               checkemail() 
+               checkphone()
 
           }
       })
     }
     else{
-      alert("Please fill all the field")
+      // alert("Please fill all the field")
+      document.getElementById("name-error").innerHTML="required"
+      document.getElementById("place-error").innerHTML="required"
+      document.getElementById("email-error").innerHTML="required"
+      document.getElementById("mobile-error").innerHTML="required"
     }
   })
 </script>
