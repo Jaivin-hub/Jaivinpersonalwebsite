@@ -16,7 +16,7 @@ function charectercheck(){
         // return false
     }
     else if(name1.match(check)){
-        
+        document.getElementById("name-error").innerHTML=""
         checkcharecter=true
         // return true
     }
