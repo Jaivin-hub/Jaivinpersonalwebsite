@@ -88,7 +88,7 @@ function phoneCheck(){
         checkphone=false
     }
     else{
-        document.getElementById("mobile-error").innerHTML="Please enter 10 Numbers"
+        document.getElementById("mobile-error").innerHTML="Please enter 10 Numbers only"
         checkphone=false
         // return false
     }
