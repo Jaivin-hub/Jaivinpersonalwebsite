@@ -73,21 +73,28 @@ function phoneCheck(){
     var nam=document.getElementById("mobile")
     var mobile=nam.value
     var check=/^\d{10}$/
-    if(mobile ==""){
+   
+    if(mobile.match(/[a-z]/i)){
+        document.getElementById("mobile-error").innerHTML="Invalid number"
+        checkphone=false;
+    }
+    else if(mobile ==""){
         document.getElementById("mobile-error").innerHTML="Please enter your Phone No"
         checkphone=false
         // return false
     }
+   
     else if(mobile.match(check)){
         document.getElementById("mobile-error").innerHTML=""
         checkphone=true
         // return true
 
-    }else if(mobile.length<10){
+    }
+    else if(mobile.length<10){
         document.getElementById("mobile-error").innerHTML="Entered values are below 10"
         checkphone=false
     }
-    else{
+    else {
         document.getElementById("mobile-error").innerHTML="Please enter 10 Numbers only"
         checkphone=false
         // return false
